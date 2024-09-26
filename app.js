@@ -10,6 +10,10 @@ app.get('/add', (req, res) => {
     res.send(`Sum is ${sum}`);
 });
 
+app.get('/', (req, res) => {
+    res.send('Hello World');
+});
+
 // POST method
 app.post('/add', (req, res) => {
     const { num1, num2 } = req.body;
