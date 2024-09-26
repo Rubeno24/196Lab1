@@ -17,4 +17,6 @@ app.post('/add', (req, res) => {
     res.send(`Sum is ${sum}`);
 });
 
-app.listen(3000, () => console.log('Server running on port 3000'));
+// Use process.env.PORT for Elastic Beanstalk compatibility
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Server running on port ${port}`));
