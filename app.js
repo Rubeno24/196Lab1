@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 app.use(express.json());
+const path = require('path');
+
 
 // GET method
 app.get('/add', (req, res) => {
@@ -10,9 +12,11 @@ app.get('/add', (req, res) => {
     res.send(`Sum is ${sum}`);
 });
 
+// Serve the HTML file for the front-end
 app.get('/', (req, res) => {
-    res.send('Hello World');
+    res.sendFile(path.join(__dirname, 'index.html')); // Serve the HTML file
 });
+
 
 // POST method
 app.post('/add', (req, res) => {
